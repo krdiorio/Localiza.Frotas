@@ -4,5 +4,11 @@
         <name>Localiza.Frotas</name>
     </assembly>
     <members>
+        <member name="M:Localiza.Frotas.Controllers.VeiculosController.Get">
+            <summary>
+            Retorna todos veiculos
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
