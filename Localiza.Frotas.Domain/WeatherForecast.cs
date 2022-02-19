@@ -1,6 +1,6 @@
 using System;
 
-namespace Localiza.Frotas
+namespace Localiza.Frotas.Domain
 {
     public class WeatherForecast
     {
