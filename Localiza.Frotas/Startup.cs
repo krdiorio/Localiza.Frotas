@@ -1,4 +1,5 @@
 using Localiza.Frotas.Domain;
+using Localiza.Frotas.Infra.Facade;
 using Localiza.Frotas.Infra.Repository;
 using Localiza.Frotas.Infra.Repository.EF;
 using Localiza.Frotas.Infra.Singleton;
@@ -50,7 +51,14 @@ namespace Localiza.Frotas
 
 
             services.AddTransient<IVeiculoRepository, FrotaRepository>();
+
             services.AddDbContext<FrotaContext>(options=>options.UseInMemoryDatabase("Frota"));
+
+            services.AddTransient<IVeiculoDetran, VeiculoDetranFacade>();
+
+            services.Configure<DetranOptions>(Configuration.GetSection("DetranOptions"));
+
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
